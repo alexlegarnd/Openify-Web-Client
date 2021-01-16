@@ -1,0 +1,23 @@
+.login-div {
+    position: absolute;
+    width: 350px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    margin-top: calc(-400px / 2);
+    margin-left: calc(-350px / 2);
+}
+
+mat-form-field {
+    width: 100%;
+    color: white;
+}
+
+hr {
+    border: solid 1px #679917;
+    border-radius: 2px;
+}
+
+mat-slide-toggle, button {
+    color: white;
+}

@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <span>Openify</span>
+  <span class="spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="logout()">Logout</button>
+</mat-menu>
+
+<mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let o of model">
+        <button mat-button>
+            <mat-icon *ngIf="o.isFile">music_note</mat-icon>
+            <mat-icon *ngIf="!o.isFile">folder</mat-icon>
+            {{ o.name }}
+          </button>
+    </mat-list-item>
+</mat-list>
+
+<div id="player">
+  <div>
+    <mat-slider
+      min="0"
+      max="100"
+      step="1"
+      value="0"
+      id="indicator"
+      [disabled]="disabled"
+    ></mat-slider>
+  </div>
+  <button mat-button [disabled]="disabled">
+    <mat-icon>play_arrow</mat-icon>
+  </button>
+</div>

@@ -1,0 +1,23 @@
+<div class="login-div">
+    <img src="/assets/images/white_banner.png" width="350px" height="auto"/>
+    <span *ngIf="error" style="color: red;">{{ error }}</span>
+    <mat-form-field>
+        <mat-label>Server</mat-label>
+        <input matInput placeholder="Ex. 127.0.0.1" [(ngModel)]="server" [disabled]="lock">
+    </mat-form-field>
+    <hr/>
+    <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Ex. admin" [(ngModel)]="username" [disabled]="lock">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [(ngModel)]="password" [disabled]="lock">
+    </mat-form-field>
+    <div>
+        <mat-slide-toggle [(ngModel)]="ssl" [disabled]="lock">Use SSL (HTTPS)</mat-slide-toggle>
+        <button mat-stroked-button style="float: right;" (click)="connect()" [disabled]="lock">Connect</button>
+    </div>
+    
+</div>
+
